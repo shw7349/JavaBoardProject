@@ -16,17 +16,19 @@ import java.util.Objects;
 @ToString(callSuper = true)
 @Table(indexes = {
         @Index(columnList = "content"),
-        @Index(columnList = "createdAt")
+        @Index(columnList = "createdAt"),
+        @Index(columnList = "createdBy")
 })
-//@EntityListeners(AuditingEntityListener.class)
 @Entity
-public class ArticleComment extends AuditingFields{
+public class ArticleComment extends AuditingFields {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter @ManyToOne(optional = false) private Article article; // 게시글 ID
+    @Setter @ManyToOne(optional = false) private Article article; // 게시글 (ID)
     @Setter @ManyToOne(optional = false) private UserAccount userAccount; // 유저 정보 (ID)
+
     @Setter @Column(nullable = false, length = 500) private String content; // 본문
 
 
@@ -53,4 +55,5 @@ public class ArticleComment extends AuditingFields{
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }

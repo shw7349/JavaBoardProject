@@ -19,13 +19,14 @@ public interface ArticleCommentRepository extends
         QuerydslBinderCustomizer<QArticleComment> {
 
     List<ArticleComment> findByArticle_Id(Long articleId);
+
     @Override
-    default void customize(QuerydslBindings bindings, QArticleComment root){
+    default void customize(QuerydslBindings bindings, QArticleComment root) {
         bindings.excludeUnlistedProperties(true);
         bindings.including(root.content, root.createdAt, root.createdBy);
-        //bindings.bind(root.content).first(StringExpression::likeIgnoreCase); // like '${v}'
-        bindings.bind(root.content).first(StringExpression::containsIgnoreCase); // like '%${v}%'
-        bindings.bind(root.createdAt).first(DateTimeExpression::eq); // like '%${v}%'
-        bindings.bind(root.createdBy).first(StringExpression::containsIgnoreCase); // like '%${v}%'
+        bindings.bind(root.content).first(StringExpression::containsIgnoreCase);
+        bindings.bind(root.createdAt).first(DateTimeExpression::eq);
+        bindings.bind(root.createdBy).first(StringExpression::containsIgnoreCase);
     }
+
 }
