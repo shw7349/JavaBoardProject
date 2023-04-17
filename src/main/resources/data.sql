@@ -1,3 +1,7 @@
+insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, modified_at, modified_by) values
+    ('songhw', 'testPassword', 'hyunwoo', 'shw7349@naver.com', 'I am Hyunwoo.', now(), 'hyunwoo', now(), 'hyunwoo')
+;
+
 insert into article (title, content, hashtag, created_by, modified_by, created_at, modified_at) values ('Fusce posuere felis sed lacus.', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', null, 'Claribel', 'Al', '2022-11-12 04:18:12', '2022-06-24 17:14:45');
 insert into article (title, content, hashtag, created_by, modified_by, created_at, modified_at) values ('Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.', 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', 'Puce', 'Annnora', 'Layton', '2022-05-08 05:31:28', '2022-04-27 09:34:05');
 insert into article (title, content, hashtag, created_by, modified_by, created_at, modified_at) values ('Suspendisse accumsan tortor quis turpis.', 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.', 'Orange', 'Jamal', 'Hilliary', '2023-04-03 22:41:38', '2022-11-07 21:34:29');
