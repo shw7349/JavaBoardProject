@@ -1,15 +1,13 @@
 package com.javaproject.board.service;
 
-import com.javaproject.board.ArticleDto;
+import com.javaproject.board.dto.ArticleDto;
 import com.javaproject.board.domain.type.SearchType;
+import com.javaproject.board.dto.ArticleUpdateDto;
 import com.javaproject.board.repository.ArticleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 @RequiredArgsConstructor
 @Transactional
@@ -26,5 +24,14 @@ public class ArticleService {
     @Transactional(readOnly = true)
     public ArticleDto searchArticles(long l) {
         return null;
+    }
+
+    public void saveArticle(ArticleDto Dto) {
+    }
+
+    public void updateArticle(long articleId, ArticleUpdateDto dto) {
+    }
+
+    public void deleteArticle(long articleId) {
     }
 }
