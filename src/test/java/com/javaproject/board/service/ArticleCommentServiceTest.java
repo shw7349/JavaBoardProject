@@ -25,9 +25,12 @@ import static org.mockito.BDDMockito.*;
 @DisplayName("비즈니스 로직 - 댓글")
 @ExtendWith(MockitoExtension.class)
 class ArticleCommentServiceTest {
+
     @InjectMocks private ArticleCommentService sut;
+
     @Mock private ArticleRepository articleRepository;
     @Mock private ArticleCommentRepository articleCommentRepository;
+
     @DisplayName("게시글 ID로 조회하면, 해당하는 댓글 리스트를 반환한다.")
     @Test
     void givenArticleId_whenSearchingArticleComments_thenReturnsArticleComments() {
@@ -133,24 +136,23 @@ class ArticleCommentServiceTest {
                 createUserAccountDto(),
                 content,
                 LocalDateTime.now(),
-                "uno",
+                "shw7349",
                 LocalDateTime.now(),
-                "uno"
+                "shw7349"
         );
     }
 
     private UserAccountDto createUserAccountDto() {
         return UserAccountDto.of(
-                1L,
-                "songhw",
+                "shw7349",
                 "password",
-                "shw7349@mail.com",
-                "songhw",
+                "shw7349@naver.com",
+                "shw7349",
                 "This is memo",
                 LocalDateTime.now(),
-                "songhw",
+                "shw7349",
                 LocalDateTime.now(),
-                "songhw"
+                "shw7349"
         );
     }
 
@@ -164,10 +166,10 @@ class ArticleCommentServiceTest {
 
     private UserAccount createUserAccount() {
         return UserAccount.of(
-                "songhw",
+                "shw7349",
                 "password",
                 "shw7349@email.com",
-                "songhw",
+                "shw7349",
                 null
         );
     }
@@ -180,4 +182,5 @@ class ArticleCommentServiceTest {
                 "#java"
         );
     }
+
 }
