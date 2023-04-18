@@ -71,4 +71,5 @@ public class Article extends AuditingFields {
         return Objects.hash(id);
     }
 
+
 }
