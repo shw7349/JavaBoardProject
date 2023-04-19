@@ -1,6 +1,6 @@
 package com.javaproject.board.controller;
 
-import com.javaproject.board.config.SecurityConfig;
+import com.javaproject.board.config.TestSecurityConfig;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("View 루트 컨트롤러")
-@Import(SecurityConfig.class)
+@Import(TestSecurityConfig.class)
 @WebMvcTest(MainController.class)
 class MainControllerTest {
 
@@ -29,6 +29,9 @@ class MainControllerTest {
 
         // When & Then
         mvc.perform(get("/"))
-                .andExpect(status().is3xxRedirection());
+                .andExpect(status().isOk())
+                .andExpect(view().name("forward:/articles"))
+                .andExpect(forwardedUrl("/articles"));
     }
+
 }
