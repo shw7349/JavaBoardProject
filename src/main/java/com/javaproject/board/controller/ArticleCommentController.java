@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+//생성자 주입
 @RequiredArgsConstructor
 @RequestMapping("/comments")
 @Controller
