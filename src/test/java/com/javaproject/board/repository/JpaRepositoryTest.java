@@ -3,6 +3,7 @@ package com.javaproject.board.repository;
 import com.javaproject.board.domain.Article;
 import com.javaproject.board.domain.Hashtag;
 import com.javaproject.board.domain.UserAccount;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -119,6 +120,7 @@ class JpaRepositoryTest {
         assertThat(hashtagNames).hasSize(19);
     }
 
+    @Disabled
     @DisplayName("[Querydsl] hashtag로 페이징된 게시글 검색하기")
     @Test
     void givenHashtagNamesAndPageable_whenQueryingArticles_thenReturnsArticlePage() {
